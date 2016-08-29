@@ -5,6 +5,8 @@
 \usepackage{tikz}
 \usepackage{textpos}
 \usepackage{eso-pic}
+\usepackage{ifthen}
+\usepackage{intcalc}
 
 \usepackage[serbian]{babel}
 \usefonttheme{professionalfonts}
@@ -203,6 +205,45 @@
 		\draw[fill=uorange,draw=none] (0, 2*#1) rectangle(#1, 3*#1);%%
 	}}
 
+\newcommand{\gun}[1]{%
+	\ifthenelse{\equal{\intcalcMod{\value{#1}}{5}}{1}}{%
+		\glidera{0.035}%
+	}{%
+		\ifthenelse{\equal{\intcalcMod{\value{#1}}{5}}{2}}{
+			\gliderb{0.035}%
+		}{%
+			\ifthenelse{\equal{\intcalcMod{\value{#1}}{5}}{3}}{
+				\gliderc{0.035}%
+			}{%
+				\ifthenelse{\equal{\intcalcMod{\value{#1}}{5}}{4}}{
+					\gliderd{0.035}%
+				}{%
+					\glidere{0.035}%
+				}%
+			}%
+		}%
+	}%
+}
+
+\newcommand{\gli}[1]{%
+	\ifthenelse{\equal{\intcalcMod{\value{#1}}{4}}{1}}{%
+		\gla{0.09}
+	}{%
+		\ifthenelse{\equal{\intcalcMod{\value{#1}}{4}}{2}}{
+			\glb{0.09}
+		}{%
+			\ifthenelse{\equal{\intcalcMod{\value{#1}}{4}}{3}}{
+				\glc{0.09}
+			}{%
+				\gld{0.09}
+			}%
+		}{}%
+	}{}%
+}
+	
+\setbeamertemplate{enumerate item}{\gli{enumi}}
+\setbeamertemplate{enumerate subitem}{\gun{enumii}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Essential data about the presentation goes here
 
@@ -233,19 +274,26 @@
 
 \begin{frame}
     \frametitle{Frame Title}
-    \begin{itemize}
-        	\item[\gla{0.09}] Item1
-        	\item[\glb{0.09}] Item2
-        	\item[\glc{0.09}] Item3
-        	\item[\gld{0.09}] Item4
-    	\begin{itemize}
-        \item[\glidera{0.035}] Sub-item1
-        \item[\gliderb{0.035}] Sub-item2
-        \item[\gliderc{0.035}] Sub-item3
-        \item[\gliderd{0.035}] Sub-item4
-        \item[\glidere{0.035}] Sub-item5
-        \end{itemize}
-    \end{itemize}
+    
+	\begin{enumerate}
+		\item Item 1
+		\vfill
+		\item Item 2
+		\vfill
+		\item Item 3
+		\vfill
+		\item Item 4
+		\begin{enumerate}	
+			\item Sub-item 1
+			\item Sub-item 2
+			\item Sub-item 3
+			\item Sub-item 4
+			\item Sub-item 5
+			\item (Loop-)Sub-item 6
+		\end{enumerate}
+		\vfill
+		\item Look, it loops back!
+	\end{enumerate}
 \end{frame}
 
 \end{document}
