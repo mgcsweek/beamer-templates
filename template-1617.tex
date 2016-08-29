@@ -1,0 +1,252 @@
+\documentclass[11pt, compress]{beamer}
+
+% Add additional packages here, as needed
+
+\usepackage{tikz}
+\usepackage{textpos}
+\usepackage{eso-pic}
+
+\usepackage[serbian]{babel}
+\usefonttheme{professionalfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[biolinum]{libertine}
+\renewcommand{\ttdefault}{cmtt}
+
+\useoutertheme[subsection=false,footline=authortitle]{miniframes}
+
+\usecolortheme{orchid}
+
+\setbeamercolor{navigation symbols dimmed}{fg=white}
+\setbeamercolor{navigation symbols}{fg=white}
+
+\definecolor{uorange}{HTML}{e60b42}
+\definecolor{canaub}{HTML}{F09A00}
+\definecolor{coolgrey}{HTML}{111111}
+\definecolor{lgry}{HTML}{cccccc}
+
+\setbeamercolor{title}{fg=white, bg=uorange}
+\setbeamercolor{frametitle}{fg=white, bg=uorange}
+\setbeamercolor{section in head/foot}{fg=lgry, bg=coolgrey}
+\setbeamercolor{subsection in head/foot}{fg=coolgrey, bg=canaub}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{itemize item}{fg=coolgrey}
+\setbeamercolor{itemize subitem}{fg=coolgrey}
+\setbeamercolor{normal text}{fg=coolgrey}
+
+\newcommand\Proba{\mathbb{P}}
+\newtheorem*{mytheorem}{Teorema}
+\newtheorem*{myproof}{Dokaz}
+\newtheorem*{mycorollary}{Posledica}
+
+\frenchspacing
+
+\addtobeamertemplate{title page}{}{%
+\begin{textblock*}{\paperwidth}(0.02cm,-5.185cm)
+\begin{tikzpicture}
+	\fill[rectangle, fill=white, opacity=0.5] (-1, 0) rectangle (9.76, 0.04);
+\end{tikzpicture}
+\end{textblock*}}
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{100mm}(\textwidth,-0.845cm)
+\includegraphics[height=0.75cm]{v3-button-w.png}
+\end{textblock*}}
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{\paperwidth}(-0.98cm,-0.94cm)
+\begin{tikzpicture}
+	\fill[rectangle, fill=white, opacity=0.5] (-1, 0) rectangle (11.76, 0.04);
+\end{tikzpicture}
+\end{textblock*}}
+
+\newcommand{\glidera}[1]{\tikz{
+		\draw[fill=uorange,draw=none] (0, 0) rectangle(#1, #1);%%
+		\draw[fill=uorange,draw=none] (-2*#1, #1) rectangle(-#1, 2*#1);
+		\draw[fill=uorange,draw=none] (-#1, #1) rectangle(0, 2*#1);
+		\draw[fill=uorange,draw=none] (0, #1) rectangle(#1, 2*#1);
+		\draw[fill=uorange,draw=none] (#1, #1) rectangle(2*#1, 2*#1);%%
+		\draw[fill=uorange,draw=none] (-3*#1, 2*#1) rectangle(-2*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (-#1, 2*#1) rectangle(0, 3*#1);
+		\draw[fill=uorange,draw=none] (#1, 2*#1) rectangle(2*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 2*#1) rectangle(3*#1, 3*#1);%%
+		\draw[fill=uorange,draw=none] (-4*#1, 3*#1) rectangle(-3*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (-#1, 3*#1) rectangle(0, 4*#1);
+		\draw[fill=uorange,draw=none] (#1, 3*#1) rectangle(2*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 3*#1) rectangle(3*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (3*#1, 3*#1) rectangle(4*#1, 4*#1);%%
+		\draw[fill=uorange,draw=none] (-3*#1, 4*#1) rectangle(-2*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (-#1, 4*#1) rectangle(0, 5*#1);
+		\draw[fill=uorange,draw=none] (#1, 4*#1) rectangle(2*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 4*#1) rectangle(3*#1, 5*#1);%%
+		\draw[fill=uorange,draw=none] (-2*#1, 5*#1) rectangle(-#1, 6*#1);
+		\draw[fill=uorange,draw=none] (-#1, 5*#1) rectangle(0, 6*#1);
+		\draw[fill=uorange,draw=none] (0, 5*#1) rectangle(#1, 6*#1);
+		\draw[fill=uorange,draw=none] (#1, 5*#1) rectangle(2*#1, 6*#1);%%
+		\draw[fill=uorange,draw=none] (0, 6*#1) rectangle(#1, 7*#1);%%
+	}}
+	
+\newcommand{\gliderb}[1]{\tikz{
+		\draw[fill=uorange,draw=none] (0, 0) rectangle(#1, #1);
+		\draw[fill=uorange,draw=none] (#1, 0) rectangle(2*#1, #1);%%
+		\draw[fill=uorange,draw=none] (-2*#1, #1) rectangle(-#1, 2*#1);
+		\draw[fill=uorange,draw=none] (2*#1, #1) rectangle(3*#1, 2*#1);%%
+		\draw[fill=uorange,draw=none] (-3*#1, 2*#1) rectangle(-2*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (3*#1, 2*#1) rectangle(4*#1, 3*#1);%%
+		\draw[fill=uorange,draw=none] (-4*#1, 3*#1) rectangle(-3*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (-3*#1, 3*#1) rectangle(-2*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (-#1, 3*#1) rectangle(0, 4*#1);
+		\draw[fill=uorange,draw=none] (3*#1, 3*#1) rectangle(4*#1, 4*#1);%%
+		\draw[fill=uorange,draw=none] (-3*#1, 4*#1) rectangle(-2*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (3*#1, 4*#1) rectangle(4*#1, 5*#1);%%
+		\draw[fill=uorange,draw=none] (-2*#1, 5*#1) rectangle(-#1, 6*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 5*#1) rectangle(3*#1, 6*#1);%%
+		\draw[fill=uorange,draw=none] (0, 6*#1) rectangle(#1, 7*#1);
+		\draw[fill=uorange,draw=none] (#1, 6*#1) rectangle(2*#1, 7*#1);%%
+	}}
+	
+\newcommand{\gliderc}[1]{\tikz{
+		\draw[fill=uorange,draw=none] (0, 0) rectangle(#1, #1);%%
+		\draw[fill=uorange,draw=none] (0, #1) rectangle(#1, 2*#1);
+		\draw[fill=uorange,draw=none] (#1, #1) rectangle(2*#1, 2*#1);%%
+		\draw[fill=uorange,draw=none] (-5*#1, 2*#1) rectangle(-4*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (-4*#1, 2*#1) rectangle(-3*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (#1, 2*#1) rectangle(2*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 2*#1) rectangle(3*#1, 3*#1);%%
+		\draw[fill=uorange,draw=none] (-5*#1, 3*#1) rectangle(-4*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (-4*#1, 3*#1) rectangle(-3*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (#1, 3*#1) rectangle(2*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 3*#1) rectangle(3*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (3*#1, 3*#1) rectangle(4*#1, 4*#1);%%
+		\draw[fill=uorange,draw=none] (-5*#1, 4*#1) rectangle(-4*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (-4*#1, 4*#1) rectangle(-3*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (#1, 4*#1) rectangle(2*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 4*#1) rectangle(3*#1, 5*#1);%%
+		\draw[fill=uorange,draw=none] (0, 5*#1) rectangle(#1, 6*#1);
+		\draw[fill=uorange,draw=none] (#1, 5*#1) rectangle(2*#1, 6*#1);%%
+		\draw[fill=uorange,draw=none] (0, 6*#1) rectangle(#1, 7*#1);%%
+	}}
+	
+\newcommand{\gliderd}[1]{\tikz{
+		\draw[fill=uorange,draw=none] (0, 0) rectangle(#1, #1);
+		\draw[fill=uorange,draw=none] (#1, 0) rectangle(2*#1, #1);%%
+		\draw[fill=uorange,draw=none] (0, #1) rectangle(#1, 2*#1);
+		\draw[fill=uorange,draw=none] (2*#1, #1) rectangle(3*#1, 2*#1);%%
+		\draw[fill=uorange,draw=none] (-5*#1, 2*#1) rectangle(-4*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (-4*#1, 2*#1) rectangle(-3*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (3*#1, 2*#1) rectangle(4*#1, 3*#1);%%
+		\draw[fill=uorange,draw=none] (-6*#1, 3*#1) rectangle(-5*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (-3*#1, 3*#1) rectangle(-2*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (0, 3*#1) rectangle(#1, 4*#1);
+		\draw[fill=uorange,draw=none] (3*#1, 3*#1) rectangle(4*#1, 4*#1);%%
+		\draw[fill=uorange,draw=none] (-5*#1, 4*#1) rectangle(-4*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (-4*#1, 4*#1) rectangle(-3*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (3*#1, 4*#1) rectangle(4*#1, 5*#1);%%
+		\draw[fill=uorange,draw=none] (0, 5*#1) rectangle(#1, 6*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 5*#1) rectangle(3*#1, 6*#1);%%
+		\draw[fill=uorange,draw=none] (0, 6*#1) rectangle(#1, 7*#1);
+		\draw[fill=uorange,draw=none] (#1, 6*#1) rectangle(2*#1, 7*#1);%%
+	}}
+	
+\newcommand{\glidere}[1]{\tikz{
+		\draw[fill=uorange,draw=none] (0, 0) rectangle(#1, #1);
+		\draw[fill=uorange,draw=none] (#1, 0) rectangle(2*#1, #1);%%
+		\draw[fill=uorange,draw=none] (0, #1) rectangle(#1, 2*#1);
+		\draw[fill=uorange,draw=none] (2*#1, #1) rectangle(3*#1, 2*#1);%%
+		\draw[fill=uorange,draw=none] (-5*#1, 2*#1) rectangle(-4*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (-4*#1, 2*#1) rectangle(-3*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (#1, 2*#1) rectangle(2*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 2*#1) rectangle(3*#1, 3*#1);
+		\draw[fill=uorange,draw=none] (3*#1, 2*#1) rectangle(4*#1, 3*#1);%%
+		\draw[fill=uorange,draw=none] (-6*#1, 3*#1) rectangle(-5*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (-3*#1, 3*#1) rectangle(-2*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 3*#1) rectangle(3*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (3*#1, 3*#1) rectangle(4*#1, 4*#1);
+		\draw[fill=uorange,draw=none] (4*#1, 3*#1) rectangle(5*#1, 4*#1);%%
+		\draw[fill=uorange,draw=none] (-5*#1, 4*#1) rectangle(-4*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (-4*#1, 4*#1) rectangle(-3*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (#1, 4*#1) rectangle(2*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 4*#1) rectangle(3*#1, 5*#1);
+		\draw[fill=uorange,draw=none] (3*#1, 4*#1) rectangle(4*#1, 5*#1);%%
+		\draw[fill=uorange,draw=none] (0, 5*#1) rectangle(#1, 6*#1);
+		\draw[fill=uorange,draw=none] (2*#1, 5*#1) rectangle(3*#1, 6*#1);%%
+		\draw[fill=uorange,draw=none] (0, 6*#1) rectangle(#1, 7*#1);
+		\draw[fill=uorange,draw=none] (#1, 6*#1) rectangle(2*#1, 7*#1);%%
+	}}
+	
+\newcommand{\gla}[1]{\tikz{
+		\draw[fill=uorange,draw=none] (0, 0) rectangle(#1, #1);
+		\draw[fill=uorange,draw=none] (#1, 0) rectangle(2*#1, #1);
+		\draw[fill=uorange,draw=none] (2*#1, 0) rectangle(3*#1, #1);%%
+		\draw[fill=uorange,draw=none] (2*#1, #1) rectangle(3*#1, 2*#1);%%
+		\draw[fill=uorange,draw=none] (#1, 2*#1) rectangle(2*#1, 3*#1);%%
+	}}
+\newcommand{\glb}[1]{\tikz{
+		\draw[fill=uorange,draw=none] (0, 0) rectangle(#1, #1);%%
+		\draw[fill=uorange,draw=none] (0, #1) rectangle(#1, 2*#1);
+		\draw[fill=uorange,draw=none] (#1, #1) rectangle(2*#1, 2*#1);%%
+		\draw[fill=uorange,draw=none] (-#1, 2*#1) rectangle(0, 3*#1);
+		\draw[fill=uorange,draw=none] (#1, 2*#1) rectangle(2*#1, 3*#1);%%
+	}}
+\newcommand{\glc}[1]{\tikz{
+		\draw[fill=uorange,draw=none] (0, 0) rectangle(#1, #1);
+		\draw[fill=uorange,draw=none] (#1, 0) rectangle(2*#1, #1);%%
+		\draw[fill=uorange,draw=none] (-#1, #1) rectangle(0, 2*#1);
+		\draw[fill=uorange,draw=none] (#1, #1) rectangle(2*#1, 2*#1);%%
+		\draw[fill=uorange,draw=none] (#1, 2*#1) rectangle(2*#1, 3*#1);%%
+	}}
+\newcommand{\gld}[1]{\tikz{
+		\draw[fill=uorange,draw=none] (0, 0) rectangle(#1, #1);
+		\draw[fill=uorange,draw=none] (#1, 0) rectangle(2*#1, #1);%%
+		\draw[fill=uorange,draw=none] (#1, #1) rectangle(2*#1, 2*#1);
+		\draw[fill=uorange,draw=none] (2*#1, #1) rectangle(3*#1, 2*#1);%%
+		\draw[fill=uorange,draw=none] (0, 2*#1) rectangle(#1, 3*#1);%%
+	}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Essential data about the presentation goes here
+
+\title{Title}
+\author[\textcolor{lgry}{Author}]{Author}
+\date{XXXX. decembar 2016.}
+\institute{Matematička gimnazija\\ \textcolor{uorange}{\scshape Nedelja informatike$^3$}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+{
+    \setbeamertemplate{headline}{} 
+    \begin{frame}
+        \titlepage
+        \begin{textblock*}{\linewidth}(0cm,-7.5cm)
+  		\begin{center}
+        \includegraphics[width=0.4\linewidth]{v3-logo.png}
+        \end{center}
+        \end{textblock*}
+    \end{frame}
+}
+
+\section{This is a section}
+
+\subsection{This is a subsection}
+
+\begin{frame}
+    \frametitle{Frame Title}
+    \begin{itemize}
+        	\item[\gla{0.09}] Item1
+        	\item[\glb{0.09}] Item2
+        	\item[\glc{0.09}] Item3
+        	\item[\gld{0.09}] Item4
+    	\begin{itemize}
+        \item[\glidera{0.035}] Sub-item1
+        \item[\gliderb{0.035}] Sub-item2
+        \item[\gliderc{0.035}] Sub-item3
+        \item[\gliderd{0.035}] Sub-item4
+        \item[\glidere{0.035}] Sub-item5
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\end{document}
+
