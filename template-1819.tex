@@ -1,0 +1,86 @@
+\documentclass[11pt, compress]{beamer}
+
+% Add additional packages here, as needed
+
+% Images
+\usepackage{tikz}
+\usepackage{textpos}
+\usepackage{eso-pic}
+
+% Fonts and character encoding
+\usepackage[serbian]{babel}
+\usefonttheme{professionalfonts}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{inconsolata}
+\usepackage[utf8]{inputenc}
+
+\useoutertheme[subsection=false,footline=authortitle]{miniframes}
+
+\usecolortheme{whale}
+\usecolortheme{orchid}
+
+\setbeamercolor{navigation symbols dimmed}{fg=white}
+\setbeamercolor{navigation symbols}{fg=white}
+
+\definecolor{blockcol}{HTML}{890CA0}
+\definecolor{blockcolcompl}{HTML}{A0940C}
+\definecolor{coolgrey}{HTML}{333333}
+
+\setbeamercolor{title}{fg=white, bg=blockcol}
+\setbeamercolor{frametitle}{fg=white, bg=blockcol}
+\setbeamercolor{section in head/foot}{fg=white, bg=coolgrey}
+\setbeamercolor{subsection in head/foot}{fg=coolgrey, bg=blockcolcompl}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{itemize item}{fg=coolgrey}
+\setbeamercolor{itemize subitem}{fg=coolgrey}
+\setbeamercolor{normal text}{fg=coolgrey}
+
+\newtheorem*{mytheorem}{Teorema}
+\newtheorem*{myproof}{Dokaz}
+\newtheorem*{mycorollary}{Posledica}
+
+\frenchspacing
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{100mm}(10.9cm,-0.8cm)
+\includegraphics[height=0.7cm]{logo-white@2x.png}
+\end{textblock*}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Essential data about the presentation goes here
+
+\title{Title}
+\author[\textcolor{white}{Author}]{Author}
+\date{XX. decembar 2018.}
+\institute{Matematička gimnazija\\[0.5ex]\textcolor{blockcol}{\scshape Nedelja$_\text{informatike}^{\text{v5.0}}$}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+{
+	\setbeamertemplate{headline}{}
+	\begin{frame}
+		\titlepage
+		\begin{textblock*}{\linewidth}(0cm, -7.5cm)
+		\begin{center}
+			\includegraphics[width=0.6\linewidth]{logo-v5.png}
+		\end{center}	
+		\end{textblock*}
+	\end{frame}
+}
+
+
+\section{This is a section}
+
+\begin{frame}
+    \frametitle{Frame Title}
+    \begin{itemize}
+        \item Item1
+        \item \texttt{\textbf{in}conso\textbf{lata}}
+    \end{itemize}
+\end{frame}
+
+\end{document}
+
